@@ -69,3 +69,41 @@ div.logos a {
 #scoreString {
 	margin-bottom: 5px;
 }
+
+#bigText {
+	overflow: hidden;
+	white-space: nowrap;
+	margin: 0 auto;
+	animation: blinking 5s linear 0s infinite;
+}
+
+#topSmallText {
+	overflow: hidden;
+	white-space: nowrap;
+	margin: 0 auto;
+	animation: typing 5s steps(60, end) 1.5s;
+	animation-fill-mode: backwards;
+}
+
+#bottomSmallText {
+	overflow: hidden;
+	white-space: nowrap;
+	margin: 0 auto;
+	animation: typing 5s steps(60, end) 3s;
+	animation-fill-mode: backwards;
+}
+
+@keyframes typing {
+	from {width: 0;}
+	to   {width: 100%;}
+}
+
+@keyframes blinking {
+	from {opacity: 1;}
+	10%  {opacity: 0;}
+	20%  {opacity: 1;}
+	50%  {opacity: 1;}
+	60%  {opacity: 0;}
+	70%  {opacity: 1;}
+	to   {opacity: 1;}
+}
