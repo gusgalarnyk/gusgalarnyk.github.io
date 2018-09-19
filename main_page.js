@@ -5,20 +5,20 @@ var topSmallText = null;
 var bottomSmallText = null;
 
 var speed = 1000;
-var fastSpd = 1000; 
+var fastSpd = 1000;
 
 document.addEventListener("keydown", keyLog);
 
-function keyLog(e) 
+function keyLog(e)
 {
     lastChar = e.key;
-    
+
     if (lastChar == "Enter")
     {
 		bigText = "";
 		topSmallText = "";
 		bottomSmallText = "";
-		
+
         switch(cheatCode)
         {
             case "gus":
@@ -54,19 +54,16 @@ function keyLog(e)
     }
 }
 
-function queueWrite(id, str, first = 0) 
+function queueWrite(id, str, first = 0)
 {
     //console.log("string is : " + str);
 	console.log("Id at que is: " + id);
+  var dir = 0;
 	if (first == 1)
 	{
 		dir = 1
 	}
-	else
-	{
-		dir = 0
-	} 
-	
+
 	setTimeout(function() {typeWrite(str, id, dir);}, 50);
 }
 
@@ -76,15 +73,15 @@ function typeWrite(str, id, dir)
     {
 		first = 0;
 		len = str.length;
-		
-		if (len > 0) 
+
+		if (len > 0)
 		{
 			//console.log("string before addition is: " + str);
 			document.getElementById(id).innerHTML += str.charAt(0);
 			str = str.substring(1, len);
 			len = len - 1;
 		}
-		
+
 		if (len < 1)
 		{
 			first = 1;
@@ -101,12 +98,12 @@ function typeWrite(str, id, dir)
         deleteStr = deleteStr.substring(0, len);
 		console.log("deleteString is now: " + deleteStr);
         document.getElementById(id).innerHTML = deleteStr;
-		
+
 		if (len < 1)
 		{
 			first = 0;
 		}
-    }    
+    }
 
     if (len > 0 || first == 0)
     {
